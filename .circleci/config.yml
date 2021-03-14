@@ -11,7 +11,7 @@ jobs:
           command: sudo pip install awscli
       - run:
           name: Deploy to S3 bucket
-          command: aws s3 sync . s3://bootsnacks-bucket --exclude '.circleci/*'
+          command: aws s3 sync . s3://bootstrap-bootsnacks --exclude '.circleci/*'
             --exclude '.git/*'
 workflows:
   version: 2

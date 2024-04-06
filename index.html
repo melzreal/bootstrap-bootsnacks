@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark ">
         <div class="container">
-            <a href="index.html" class="navbar-brand "> BootSnacks</a>
+            <a href="index.html" class="navbar-brand"> BootSnacks </a>
             
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -55,8 +55,10 @@
                     <div class="container">
                         <div class="carousel-caption d-none d-sm-block text-right mb-5">
                             <h1 class="display-3"> Helo nhom </h1>
-                            <p class="lead">Lorem ipsum dolor sit amet consectetur
-                                 adipisicing elit. Incidunt, odio?</p>
+                            <p class="lead"> 
+                                Lorem ipsum dolor sit amet consectetur
+                                 adipisicing elit. Incidunt, odio?
+                            </p>
                                  <a href="#" class="btn btn-danger btn-lg"> Sign Up</a>
                         </div>
                     </div>
@@ -150,7 +152,7 @@
                          <a href="#" class="btn btn-outline-danger btn-lg">Learn More</a>
                 </div>
                 <div class="col-md-4 p-5">
-                    <img src="/img/william-felker.jpg" class="d-none d-lg-block img-fluid">
+                    <img src="./img/william-felker.jpg" class="d-lg-block img-fluid" alt="Berries">
                 </div>
             </div>
         </div>
@@ -190,25 +192,29 @@
 
 
 
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script>
-    $('#year').text(new Date().getFullYear());
+    $(document).ready(function() {
+        $('#year').text(new Date().getFullYear());
 
-    $(function () {
-      // Auto play modal video
-      $(".video").click(function () {
-        const theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-        $(theModal + ' iframe').attr('src', videoSRCauto);
-        $(theModal + ' button.close').click(function () {
-          $(theModal + ' iframe').attr('src', videoSRC);
+        $('li.nav-item').click(function(event) {
+            event.preventDefault();
+            $(this).addClass('active').siblings().removeClass('active');
         });
-      });
+
+        $(".video").click(function() {
+            const theModal = $(this).data("target"),
+                videoSRC = $(this).attr("data-video"),
+                videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+            $(theModal + ' iframe').attr('src', videoSRCauto);
+            $(theModal + ' button.close').click(function() {
+                $(theModal + ' iframe').attr('src', videoSRC);
+            });
+        });
     });
+
     </script>
 </body>
 </html>
